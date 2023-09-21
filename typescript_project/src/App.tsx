@@ -1,14 +1,14 @@
 import NewTodo from './components/NewTodo';
 import Todos from './components/Todos';
+import TodosContextProvider from './store/todos-context';
 
-function App() {
-
-  return (
-    <div>
-      <NewTodo onAddTodo={addTodoHandler}/>
-      <Todos items={todos} onRemoveTodo={removeTodoHandler}/>
-    </div>
-  );
-}
-
-export default App;
+  function App() {
+    return (
+      <TodosContextProvider>
+        <NewTodo />
+        <Todos />
+      </TodosContextProvider>
+    );
+  }
+  
+  export default App;
